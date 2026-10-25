@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Request deletion of your Blood Donator Heroes account and associated personal data.">
+  <meta name="theme-color" content="#7e2034">
+  <title>Delete your account | Blood Donator Heroes</title>
+  <style>
+    :root{color-scheme:light;--ink:#2c1820;--muted:#735f65;--red:#8e1b2b;--line:#eadfe2}*{box-sizing:border-box}body{margin:0;background:#fcf9f7;color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header,main,footer{max-width:1080px;margin:auto;padding:28px}header{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}.mark{display:grid;place-items:center;background:var(--red);color:white;border-radius:14px;width:44px;height:44px;font-size:29px;font-weight:500}.brand{font-weight:750;line-height:1.3}.brand small{display:block;font-size:12px;font-weight:500;color:var(--muted);margin-top:3px}main{padding-top:60px}.eyebrow{font-size:12px;font-weight:750;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}h1{font-size:clamp(36px,6vw,60px);line-height:1.08;letter-spacing:-.045em;max-width:650px;margin:18px 0 24px}h2{font-size:22px;line-height:1.3;margin:0 0 18px}p{margin:0 0 18px}.intro{max-width:640px;color:var(--muted);font-size:18px}.layout{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;margin:40px 0}.card{padding:30px;background:white;border:1px solid var(--line);border-radius:22px}.request{border-top:4px solid var(--red)}label{display:block;font-weight:650;font-size:14px;margin:18px 0 7px}input,textarea{width:100%;border:1px solid #cbbbc0;border-radius:10px;padding:12px;background:#fff;font:inherit;color:var(--ink)}textarea{resize:vertical;min-height:96px}.hint,small{font-size:13px;color:var(--muted)}.consent{display:flex;align-items:flex-start;gap:10px;font-weight:400}.consent input{width:18px;height:18px;flex-shrink:0;margin-top:4px;accent-color:var(--red)}button{border:0;border-radius:10px;padding:14px 20px;background:var(--red);color:white;font:inherit;font-weight:700;width:100%;cursor:pointer;margin:16px 0 10px}button:disabled{background:#82767a;cursor:not-allowed}button:hover:enabled{background:#681321}a{color:var(--red);overflow-wrap:anywhere}input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #be7185;outline-offset:3px}.steps{list-style:none;padding:0;margin:0;counter-reset:steps}.steps li{position:relative;padding:0 0 24px 42px;counter-increment:steps}.steps li:before{content:counter(steps);position:absolute;left:0;top:0;border:1px solid var(--line);border-radius:50%;width:28px;height:28px;text-align:center;color:var(--red);font-weight:700}.steps strong{display:block}.steps span{font-size:14px;color:var(--muted)}.notice{padding:14px 16px;background:#fff3e1;border-radius:10px;font-size:14px;margin:20px 0}.data{border-top:1px solid var(--line);padding-top:28px}.data ul{padding-left:20px;color:var(--muted)}footer{border-top:1px solid var(--line);font-size:13px;color:var(--muted);margin-top:32px;padding-bottom:40px}.pill{display:inline-block;border:1px solid var(--line);padding:5px 12px;border-radius:30px;font-size:12px;margin-top:10px}#status{font-size:14px;color:var(--red)}[hidden]{display:none!important}@media(max-width:740px){header,main,footer{padding-left:20px;padding-right:20px}main{padding-top:38px}.layout{grid-template-columns:1fr;gap:20px}.card{padding:23px}.intro{font-size:16px}}
+  </style>
+</head>
+<body>
+  <header><span class="mark" aria-hidden="true">+</span><div class="brand">Blood Donator Heroes<small>Account &amp; privacy support</small></div></header>
+  <main>
+    <div class="eyebrow">Your data. Your choice.</div>
+    <h1>Request account deletion.</h1>
+    <p class="intro">Leave the community on your terms. Use this page to request permanent deletion of your Blood Donator Heroes account and the personal data associated with it.</p>
+    <span class="pill">No app installation or sign-in required</span>
+    <div id="setup" class="notice" role="status" hidden>This page is awaiting support contact and deletion policy configuration. Deletion requests are not available here yet.</div>
+    <div class="layout">
+      <section class="card request" aria-labelledby="request-title">
+        <h2 id="request-title">Send a deletion request</h2>
+        <p class="hint">This form prepares an email. You must send it from your email app to submit your request.</p>
+        <form id="request-form">
+          <label for="identity">Registered email or phone number</label>
+          <input id="identity" name="identity" required maxlength="160" autocomplete="username" placeholder="Email or phone used for your account" aria-describedby="identity-help">
+          <div id="identity-help" class="hint">Include the country code if using a phone number.</div>
+          <label for="notes">Additional details <span class="hint">(optional)</span></label>
+          <textarea id="notes" name="notes" maxlength="1200" placeholder="Anything that will help us identify your account"></textarea>
+          <label class="consent"><input type="checkbox" id="confirm" required><span>I am the account holder and want to permanently delete my account and associated personal data.</span></label>
+          <button id="send" type="submit" disabled>Prepare deletion email <span aria-hidden="true">↗</span></button>
+          <p class="hint">Never include your password, one-time code, or identity documents in this form.</p>
+          <p id="status" role="status" aria-live="polite"></p>
+        </form>
+        <p id="direct" class="hint" hidden>Prefer writing directly? Email <a id="email-link"></a> with the subject “Account deletion request”. Include your registered email or phone number.</p>
+        <noscript><p>Enable JavaScript to load the support contact and prepare your email. This page does not submit requests without it.</p></noscript>
+      </section>
+      <section class="card" aria-labelledby="process-title">
+        <h2 id="process-title">What happens next</h2>
+        <ol class="steps">
+          <li><strong>Send your request</strong><span>Prepare the email here, review it, and press Send in your email app. You can request deletion even after uninstalling the app.</span></li>
+          <li><strong>Confirm account ownership</strong><span>Support may contact you through your registered contact details to confirm that the account belongs to you.</span></li>
+          <li><strong>Receive confirmation</strong><span>Support will confirm when your account and associated data have been deleted.</span></li>
+        </ol>
+        <p><strong>Processing time</strong><br><span id="processing" class="hint">The processing timeframe has not yet been published.</span></p>
+        <div class="notice">Deletion is permanent. Uninstalling the app or signing out does not delete your account.</div>
+      </section>
+    </div>
+    <section class="data" aria-labelledby="data-title">
+      <h2 id="data-title">Account &amp; associated data</h2>
+      <p>Your request covers your account and the personal data linked to it, including the following where stored:</p>
+      <ul><li>Account identity, donor profile, and contact details.</li><li>Profile photo, blood group, and saved location information.</li><li>Personal data associated with donation activity, blood requests, and messages.</li></ul>
+      <p><strong>Data retention</strong><br><span id="retention">The operator has not yet published which data, if any, must be retained or for how long.</span></p>
+      <p class="hint">This webpage does not upload your form entries to a server or save them in browser storage. Your request is sent through your email provider only after you send the prepared email.</p>
+    </section>
+  </main>
+  <footer>Blood Donator Heroes · Account deletion support<br>Android app: org.blooddonatorheroes.app</footer>
+  <script src="./config.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
